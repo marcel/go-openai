@@ -221,10 +221,19 @@ type ChatCompletionResponseFormatJSONSchema struct {
 	Strict      bool           `json:"strict"`
 }
 
+type ServiceTier string
+
+const (
+	ServiceTierAuto    ServiceTier = "auto"
+	ServiceTierDefault ServiceTier = "default"
+	ServiceTierFlex    ServiceTier = "flex"
+)
+
 // ChatCompletionRequest represents a request structure for chat completion API.
 type ChatCompletionRequest struct {
-	Model    string                  `json:"model"`
-	Messages []ChatCompletionMessage `json:"messages"`
+	Model       string                  `json:"model"`
+	Messages    []ChatCompletionMessage `json:"messages"`
+	ServiceTier ServiceTier             `json:"service_tier,omitempty"`
 	// MaxTokens The maximum number of tokens that can be generated in the chat completion.
 	// This value can be used to control costs for text generated via API.
 	// This value is now deprecated in favor of max_completion_tokens, and is not compatible with o1 series models.
