@@ -404,6 +404,7 @@ type ChatCompletionResponse struct {
 	Usage               Usage                  `json:"usage"`
 	SystemFingerprint   string                 `json:"system_fingerprint"`
 	PromptFilterResults []PromptFilterResult   `json:"prompt_filter_results,omitempty"`
+	ServiceTier         ServiceTier            `json:"service_tier,omitempty"`
 
 	httpHeader
 }
