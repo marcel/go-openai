@@ -132,6 +132,7 @@ func (m ChatCompletionMessage) MarshalJSON() ([]byte, error) {
 			Refusal          string            `json:"refusal,omitempty"`
 			MultiContent     []ChatMessagePart `json:"content,omitempty"`
 			Name             string            `json:"name,omitempty"`
+			Reasoning        string            `json:"reasoning,omitempty"`
 			ReasoningContent string            `json:"reasoning_content,omitempty"`
 			FunctionCall     *FunctionCall     `json:"function_call,omitempty"`
 			ToolCalls        []ToolCall        `json:"tool_calls,omitempty"`
@@ -146,6 +147,7 @@ func (m ChatCompletionMessage) MarshalJSON() ([]byte, error) {
 		Refusal          string            `json:"refusal,omitempty"`
 		MultiContent     []ChatMessagePart `json:"-"`
 		Name             string            `json:"name,omitempty"`
+		Reasoning        string            `json:"reasoning,omitempty"`
 		ReasoningContent string            `json:"reasoning_content,omitempty"`
 		FunctionCall     *FunctionCall     `json:"function_call,omitempty"`
 		ToolCalls        []ToolCall        `json:"tool_calls,omitempty"`
@@ -161,6 +163,7 @@ func (m *ChatCompletionMessage) UnmarshalJSON(bs []byte) error {
 		Refusal          string `json:"refusal,omitempty"`
 		MultiContent     []ChatMessagePart
 		Name             string        `json:"name,omitempty"`
+		Reasoning        string        `json:"reasoning,omitempty"`
 		ReasoningContent string        `json:"reasoning_content,omitempty"`
 		FunctionCall     *FunctionCall `json:"function_call,omitempty"`
 		ToolCalls        []ToolCall    `json:"tool_calls,omitempty"`
@@ -177,6 +180,7 @@ func (m *ChatCompletionMessage) UnmarshalJSON(bs []byte) error {
 		Refusal          string            `json:"refusal,omitempty"`
 		MultiContent     []ChatMessagePart `json:"content"`
 		Name             string            `json:"name,omitempty"`
+		Reasoning        string            `json:"reasoning,omitempty"`
 		ReasoningContent string            `json:"reasoning_content,omitempty"`
 		FunctionCall     *FunctionCall     `json:"function_call,omitempty"`
 		ToolCalls        []ToolCall        `json:"tool_calls,omitempty"`
